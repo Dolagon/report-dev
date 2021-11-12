@@ -1,9 +1,9 @@
 <template>
     <div class="home">
-        <top-view></top-view>
-        <sales-view></sales-view>
-        <bottom-view></bottom-view>
-        <map-view></map-view>
+        <top-view/>
+        <sales-view/>
+        <bottom-view/>
+        <map-view/>
     </div>
 </template>
 
@@ -15,7 +15,7 @@ import MapView from '@/components/MapView/MapView';
 
 export default {
     name: 'home',
-    data () {
+    data() {
         return {};
     },
     components: {
