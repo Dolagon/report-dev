@@ -10,6 +10,7 @@ module.exports = {
     rules: {
         'no-console': 'off',
         'no-debugger': 'off',
+        'no-return-assign': 'off',
         'indent': 'off',
         'semi': 'off',
         'space-before-function-paren': 'off'

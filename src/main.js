@@ -10,7 +10,7 @@ import './style/index.css';
 Vue.config.productionTip = false;
 Vue.prototype.$echarts = ECharts;
 // 注册VueEcharts组件
-Vue.component('v-chart', VueEcharts);
+Vue.component('v-chart', VueEcharts); // echarts 不是 v-charts
 
 new Vue({
     router,

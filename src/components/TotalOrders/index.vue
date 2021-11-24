@@ -1,7 +1,7 @@
 <template>
     <card
         title="累计订单量"
-        value="￥ 2,157,420"
+        :value="orderToday"
     >
         <template>
             <v-chart :options="getOptions()" />
@@ -9,18 +9,20 @@
         <!-- footer -->
         <template v-slot:footer>
             <span>昨日订单量</span>
-            <span class="emphasis">￥ 20,000,000</span>
+            <span class="emphasis">{{ orderLastDay }}</span>
         </template>
     </card>
 </template>
 
 <script>
-import commonCardMixin from '@/components/mixins/commonCardMixin';
+import commonCardMixin from '@/mixins/commonCardMixin';
+import commonDataMixin from '@/mixins/commonDataMixin';
 
 export default {
-    mixins: [commonCardMixin],
+    mixins: [commonCardMixin, commonDataMixin],
     methods: {
         getOptions() {
+            if (!this.orderTrend.length) return;
             return {
                 xAxis: {
                     type: 'category',
@@ -33,7 +35,7 @@ export default {
                 // 系列对应图标
                 series: [{
                     type: 'line',
-                    data: [620, 432, 220, 534, 790, 430, 220, 320, 532, 320, 834, 690, 530, 220, 620],
+                    data: this.orderTrend,
                     areaStyle: { // 控制面积
                         color: 'purple'
                     },
