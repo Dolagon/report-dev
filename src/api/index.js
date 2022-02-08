@@ -1,6 +1,6 @@
 import request from '@/utils/request';
 
-const icode = '3D5AC95C05ACEC3C';
+const icode = 'BFCE74F8241D3E2F';
 
 export function wordcloud() {
     return request({
